@@ -22,7 +22,6 @@ const RocketDetails = () => {
     initRocketDetails(Number(flightNum));
   }, []);
 
-  console.log(flightNum);
   return (
     <div className="rocket-details">
       <p className="title">Rocket Name: {rocketDetails?.getName()}</p>
