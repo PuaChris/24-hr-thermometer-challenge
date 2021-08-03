@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# Perpetua SpaceX Web Challenge
+- Language: TypeScript
+- Framework: React (Create React App)
+- Libraries: 
+  - Moment.js
+  - react-router-dom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
+In the project directory, you can run: `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Interviewee Notes:
+- Omitted testing as it is not expected of me and would increase the amount of time for me to complete the challenge
+- Omitted extra security checking for API usage + extra status checks and use cases
+- Had a question about what is considered for a rocket to be "reused" (see `controller.ts, line 71` for more details)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Official Challenge requirements below:
 
-### `yarn build`
+We provide our frontend engineering candidates a challenge to showcase their abilities by implementing a basic web application that requests information from a REST API. This is meant to demonstrate your knowledge of not only best practices for frontend development, but also your knowledge of javascript/typescript and the chosen framework.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Rules
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Do not copy and paste solutions from the web if you encounter any, although using a search engine is perfectly fine.
+- You should spend around 2 hours total on this challenge, however if it takes longer that's perfectly fine! We don't want you spending all of your free time on it however, so try and timebox yourself to less than 3 hours.
+- Use any frontend framework you are familiar with. You're allowed to use tools such a create-react-app to bootstrap the project as well. Note: we use Typescript & React at Perpetua.
+- Feel free to include any packages you feel help you with your solution. But you must be able to justify why you included them.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Goal
 
-### `yarn eject`
+Using SpaceX's [open API](https://docs.spacexdata.com/ ), we want you to build a simple web app that is able to list Rocket Launches, along with the ability to click into a Launch for additional information on the rocket. For reference, check out the included [video](solution.mov). Note that styles in the video may be slightly different from what is described below.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In the list, we would like to see the following for each launch:
+    - The patch image
+    - The name of the mission
+    - The day/time that it was launched
+    - The status of the launch (failed, successful, upcoming)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After tapping on a launch in the list, we would like to have a screen that shows the following information about the rocket
+    - The rocket name
+    - The rocket type
+    - Whether it was reused or not
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Design Requirements
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- The content should have a max width of 600px and scale down accordingly
 
-## Learn More
+### Launch List
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Launch Cell
+  - mission name should have size 16 font, semibold, black
+  - launch date should have size 14 font, medium, lightgrey
+  - image should be 56x56
+  - Display the provided [placeholder image](/spacex_logo_square.png) if there is no patch image
+  - status should have size 14 font, bold, red if failed, green if success, blue if upcoming
+  - have a 1px lightgrey border bottom with 10px padding
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Rocket Details
+
+- rocket name should be size 18 font
+- rocket type and whether its reused should be size 14 font lightgrey
+- have a 1px lightgrey border with 10px padding
+
+## Helpful Notes
+
+We will be evaluating the code that you send back to us with you as well as executing it ourselves. 
+Comments are not required, however you will be judged on your ability to write clean, well architected code. Keep that in mind while implementing your solution.
+
+## When Completed...
+
+Zip up the entire project and send it back to us. Please make sure it's simple for us to get the project running!
